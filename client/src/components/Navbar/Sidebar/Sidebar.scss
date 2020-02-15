@@ -1,0 +1,90 @@
+@import 'src/index.scss';
+
+@mixin mquery($size) {
+  @if $size == 640 {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+}
+
+.sidebar {
+  min-height: 100vh;
+  width: 70%;
+  background-color: $main-color;
+  position: fixed;
+  left: -100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include mquery(640) {
+    display: none;
+  }
+}
+
+.shown {
+  animation-name: showSidebar;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: forwards;
+}
+
+.hidden {
+  animation-name: showSidebar;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+  animation-direction: reverse;
+}
+
+@keyframes showSidebar {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.sidebar-item {
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+  background-color: $highlight-color;
+  padding: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.sidebar-item:hover {
+  background-color: $third-color;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 2px solid white;
+}
+
+.hamburger-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20px;
+  height: 5vh;
+  @include mquery(640) {
+    display: none;
+  }
+  align-self: flex-end;
+}
+
+.hamburger-sidebar-line {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 4px;
+  background-color: white;
+}
