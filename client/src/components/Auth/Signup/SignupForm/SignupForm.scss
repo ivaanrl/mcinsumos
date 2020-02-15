@@ -1,0 +1,46 @@
+@import 'src/index.scss';
+
+form {
+  width: 80%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.input {
+  border: 1px solid rgb(209, 203, 203);
+  padding: 7px;
+}
+
+.input-error {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  padding: 10px;
+  border: none;
+  background-color: $main-color;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+}

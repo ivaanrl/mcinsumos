@@ -1,0 +1,11 @@
+@import 'src/index.scss';
+.signupform-container {
+  margin: auto;
+  max-width: 50%;
+  min-height: 40vh;
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $main-color;
+}
